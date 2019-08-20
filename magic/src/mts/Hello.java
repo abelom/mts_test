@@ -48,6 +48,30 @@ public class Hello {
     }
 
     private static void playWith(InputStream classContent) throws IOException {
+        class MethodAnnotationScanner extends MethodVisitor {
+            public MethodAnnotationScanner() {
+                super(Opcodes.ASM5);
+            }
+
+            @Override
+            public AnnotationVisitor visitAnnotation(String desc, boolean visible) {
+                System.out.println("MethodAnnotationScanner visitAnnotation: desc=" + desc + " visible=" + visible);
+                return super.visitAnnotation(desc, visible);
+            }
+        }
+
+        class FieldAnnotationScanner extends FieldVisitor {
+            public FieldAnnotationScanner() {
+                super(Opcodes.ASM5);
+            }
+
+            @Override
+            public AnnotationVisitor visitAnnotation(String desc, boolean visible) {
+                System.out.println("FieldAnnotationScanner visitAnnotation: desc=" + desc + " visible=" + visible);
+                return super.visitAnnotation(desc, visible);
+            }
+        }
+
         ClassVisitor visitor = new ClassVisitor(Opcodes.ASM5) {
             /**
              * Called when a class is visited. This is the method called first
@@ -68,7 +92,7 @@ public class Hello {
             public MethodVisitor visitMethod(int access, String name,
                                              String desc, String signature, String[] exceptions) {
                 System.out.println("Method: " + name + " " + desc);
-                return super.visitMethod(access, name, desc, signature, exceptions);
+                return new MethodAnnotationScanner();
             }
 
 
@@ -79,7 +103,7 @@ public class Hello {
             public FieldVisitor visitField(int access, String name,
                                            String desc, String signature, Object value) {
                 System.out.println("Field: " + name + " " + desc + " value:" + value);
-                return super.visitField(access, name, desc, signature, value);
+                return new FieldAnnotationScanner();
             }
 
 
