@@ -6,4 +6,7 @@ public class LegacyS1 {
     public static LegacyS1 getInstance() {
         return INSTANCE;
     }
+
+    public void hello() {
+    }
 }
