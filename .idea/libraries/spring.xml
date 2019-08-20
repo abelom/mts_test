@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="spring">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-beans-4.3.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-context-4.3.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-core-4.3.0.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/spring-beans-4.3.0.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-context-4.3.0.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-core-4.3.0.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-beans-4.3.0.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-context-4.3.0.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-core-4.3.0.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

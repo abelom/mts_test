@@ -1,4 +1,4 @@
-package mts_test;
+package mts_test.legacy;
 
 public class LegacyS1 {
     private final static LegacyS1 INSTANCE = new LegacyS1();
