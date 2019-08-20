@@ -4,10 +4,14 @@ public class ClassMeta {
     private String name;
     private String superName;
     private boolean isSingleton;
-    private boolean springBean;
+    private boolean isSpringBean;
 
     public void setName(String name) {
         this.name = name;
+        if (name.endsWith(MagicConstants.TEST_SUFFIX)) {
+            // todo: rename this field?
+            isSpringBean = true;
+        }
     }
 
     public String getName() {
@@ -15,7 +19,6 @@ public class ClassMeta {
     }
 
     public void setSuperName(String superName) {
-
         this.superName = superName;
     }
 
@@ -32,10 +35,17 @@ public class ClassMeta {
     }
 
     public boolean isSpringBean() {
-        return springBean;
+        return isSpringBean;
     }
 
     public void setSpringBean(boolean springBean) {
-        this.springBean = springBean;
+        this.isSpringBean = springBean;
+    }
+
+    @Override
+    public String toString() {
+        return "ClassMeta{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

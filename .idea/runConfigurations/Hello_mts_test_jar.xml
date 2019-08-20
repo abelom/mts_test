@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Hello mts_test.jar" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="mts.Hello" />
+    <module name="magic" />
+    <option name="PROGRAM_PARAMETERS" value="reality/mts_test.jar" />
+    <option name="VM_PARAMETERS" value="-Dmts.debug=true" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="mts.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
